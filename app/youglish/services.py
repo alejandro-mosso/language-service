@@ -16,8 +16,9 @@ class YouglishService:
         array = response.text.split('\n')
         for a in array:
             if 'params.jsonData' in a:
+                print(a)
                 clean = a.replace('params.jsonData', '').replace('=', '').\
                         replace('\'', '').replace(';', '').replace('\\\\\\"', '').\
                         replace('\\', '')
-
+        print(clean)
         return clean
