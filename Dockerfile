@@ -22,6 +22,6 @@ RUN pip install -r /requirements.txt
 
 # Setup directory structure
 RUN mkdir /app
-WORKDIR /
-COPY ./app /
+WORKDIR /app
+COPY ./app/ /app
 
