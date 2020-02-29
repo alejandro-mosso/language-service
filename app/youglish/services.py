@@ -13,9 +13,10 @@ class YouglishService:
         response = requests.get(url=self.url + text + '/' + language)
         clean = '{}'
 
+        print(response.text)
         array = response.text.split('\n')
         for a in array:
-            print(a)
+            print('-->', a)
             if 'params.jsonData' in a:
                 clean = a.replace('params.jsonData', '').replace('=', '').\
                         replace('\'', '').replace(';', '').replace('\\\\\\"', '').\
