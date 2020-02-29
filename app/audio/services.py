@@ -23,7 +23,6 @@ class AudioService:
             array = np.unique(array[i][i2])
             clean_a = []
             for x in array:
-                print(x)
                 clean_a.append(x.replace('<meta itemprop="contentURL" content="', '').replace('"', '').\
                     replace('/>', '').strip())
 
