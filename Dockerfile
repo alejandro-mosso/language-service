@@ -1,4 +1,4 @@
-FROM amancevice/pandas:1.0.0
+FROM python:3.7.6
 #FROM python:3.7-alpine
 
 MAINTAINER Alejandro Mosso.
