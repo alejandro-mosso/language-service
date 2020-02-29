@@ -3,7 +3,13 @@ FROM amancevice/pandas:1.0.0
 
 MAINTAINER Alejandro Mosso.
 
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONPATH=/app \
+    DJANGO_SETTINGS_MODULE=config.settings.production \
+    PORT=9000 \
+    WEB_CONCURRENCY=3
+
+EXPOSE 9000
 
 # Install dependencies
 USER root
