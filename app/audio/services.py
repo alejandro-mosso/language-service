@@ -13,11 +13,10 @@ class AudioService:
         if language == 'english':
             response = requests.get(url=self.url_english + word)
 
-        print('Got response ', getsizeof(response.text))
-
         clean_a = []
-        """
         array = np.array(response.text.split('\n'))
+        print('Got response ', getsizeof(array))
+        """
         print(array.nbytes)
         index = np.char.find(array, 'itemprop="contentURL"')
         i = np.where(index != -1)
