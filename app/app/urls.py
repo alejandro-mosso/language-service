@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from app.audio.views import AudioApiView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('translate.urls')),
-    path('', include('define.urls')),
-    path('', include('youglish.urls')),
-    path('', include('audio.urls')),
+    path('audio', AudioApiView.get)
+    # path('', include('translate.urls')),
+    # path('', include('define.urls')),
+    # path('', include('youglish.urls')),
+    # path('', include('audio.urls')),
 ]
