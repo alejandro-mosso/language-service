@@ -19,9 +19,8 @@ from app.audio.views import AudioApiView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('audio', AudioApiView.as_view())
-    # path('', include('translate.urls')),
-    # path('', include('define.urls')),
-    # path('', include('youglish.urls')),
-    # path('', include('audio.urls')),
+    path('', include('translate.urls')),
+    path('', include('define.urls')),
+    path('', include('youglish.urls')),
+    path('', include('audio.urls')),
 ]
