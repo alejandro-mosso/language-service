@@ -25,7 +25,7 @@ SECRET_KEY = '=7oteres6wzeryotjb2s83@p@!5)9(m%qp0$zxug#8oi^d^=6d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '192.168.0.6']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'languagelab-service.herokuapp.com']
 
 
 # Application definition
