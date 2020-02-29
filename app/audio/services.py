@@ -14,7 +14,7 @@ class AudioService:
             response = requests.get(url=self.url_english + word)
 
         clean_a = []
-        array = np.array(response.text.split('\n'))
+        array = response.text.split('\n')
         print('Got response ', getsizeof(array))
         """
         print(array.nbytes)
