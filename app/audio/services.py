@@ -1,5 +1,6 @@
 import requests
 import numpy as np
+from sys import getsizeof
 
 
 class AudioService:
@@ -12,7 +13,7 @@ class AudioService:
         if language == 'english':
             response = requests.get(url=self.url_english + word)
 
-        print('Got response ', response)
+        print('Got response ', getsizeof(response.text))
 
         clean_a = []
         """
