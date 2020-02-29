@@ -15,7 +15,7 @@ class AudioService:
             array = response.text.split('\n')
 
             for a in array:
-                if 'itemprop="contentURL"' in a:
+                if 'itemprop="contentURL"' in a and '.mp3' in a:
                     clean_a.append(a.replace('<meta itemprop="contentURL" content="', '').replace('"', '').\
                         replace('/>', '').strip())
 

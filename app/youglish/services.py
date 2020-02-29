@@ -11,14 +11,13 @@ class YouglishService:
 
     def get_videos(self, language, text):
         response = requests.get(url=self.url + text + '/' + language)
+        clean = ''
 
-        array = np.array(response.text.split('\n'))
-        index = np.char.find(array, 'params.jsonData')
-        i = np.where(index != -1)
+        array = response.text.split('\n')
+        for a in array:
+            if 'params.jsonData' in a:
+                clean = a.replace('params.jsonData', '').replace('=', '').\
+                        replace('\'', '').replace(';', '').replace('\\\\\\"', '').\
+                        replace('\\', '')
 
-        if len(array[i]) == 0:
-            return '{}'
-        else:
-            return array[i][0].replace('params.jsonData', '').replace('=', '').\
-                replace('\'', '').replace(';', '').replace('\\\\\\"', '').\
-                replace('\\', '')
+        return clean
