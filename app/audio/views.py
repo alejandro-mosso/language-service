@@ -15,10 +15,13 @@ class AudioApiView(APIView):
         data = AudioSerializer(data=request.GET)
         if data.is_valid():
             result = self.service.getAudio(word=data['word'].value, language=data['language'].value)
-            return JsonResponse(content_type='application/json',
+            response = JsonResponse(content_type='application/json',
                                 data=result,
                                 safe=False,
                                 status=status.HTTP_200_OK)
+            response['Access-Control-Allow-Origin'] = '*'
+            response['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept'
+            return response
         else:
             return JsonResponse(content_type='application/json',
                                 data={'error': 'Invalid request'},
