@@ -17,8 +17,8 @@ class AudioApiView(APIView):
             result = self.service.getAudio(word=data['word'].value, language=data['language'].value)
             response = JsonResponse(content_type='application/json',
                                 data=result,
-                                safe=False,
-                                status=status.HTTP_200_OK)
+                                safe=False)
+            response.status_code = status.HTTP_200_OK
             response['Access-Control-Allow-Origin'] = '*'
             response['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept'
             return response

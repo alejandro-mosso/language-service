@@ -21,6 +21,8 @@ class YouglishApiView(APIView):
                                     data=json.loads(response),
                                     safe=False)
             response.status_code = status.HTTP_200_OK
+            response['Access-Control-Allow-Origin'] = '*'
+            response['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept'
             return response
         else:
             response = JsonResponse(content_type='application/json',
