@@ -4,13 +4,14 @@ import numpy as np
 
 class YouglishService:
 
-    url = 'https://youglish.com/pronounce/'
+    # url = 'https://youglish.com/pronounce/'
+    url = 'https://us-central1-three-steps-english.cloudfunctions.net/youglish'
 
     def __init__(self):
         return
 
     def get_videos(self, language, text):
-        response = requests.get(url=self.url + text + '/' + language)
+        response = requests.get(url=self.url + '?word=' + + text + '&lan=' + language)
         clean = '{}'
 
         array = response.text.split('\n')
