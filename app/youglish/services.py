@@ -11,7 +11,7 @@ class YouglishService:
         return
 
     def get_videos(self, language, text):
-        response = requests.get(url=self.url + '?word=' + + text + '&lan=' + language)
+        response = requests.get(url=self.url + '?word=' + text + '&lan=' + language)
         clean = '{}'
 
         array = response.text.split('\n')
